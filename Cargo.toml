@@ -1,7 +1,13 @@
 [package]
-name = "trafiklab"
 version = "0.0.1"
+name = "trafiklab"
+description = "Unofficial Rust SDK for Trafiklab APIs"
+authors = ["Vincent Brodin <vincent.brodin21@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/VincentBrodin/trafiklab-rs"
 edition = "2024"
+keywords = ["trafiklab", "SDK", "SL", "ResRobot", "GTFS"]
 
 [features]
 stress = []
