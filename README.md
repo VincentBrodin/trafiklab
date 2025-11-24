@@ -7,9 +7,10 @@ This project aims to provide a clean, async, and well-typed Rust interface to al
 > If this SDK is something you're interested in using, or if you want to help get it up and running sooner **please consider contributing!**  
 > Issues, pull requests, and suggestions are all highly appreciated.
 
-## Current Endpoint: ResRobot Route planner
 
 ## Roadmap
+**Current Endpoint: ResRobot Route planner**
+
 - [ ] GTFS Svergie 2
 - [ ] GTFS Regional
   - [ ] Static
