@@ -22,8 +22,8 @@ impl From<RouteResponseRaw> for RouteResponse {
 
 #[derive(Debug)]
 pub struct Trip {
-    pub origin: Stop,
-    pub destination: Stop,
+    pub origin: Endpoint,
+    pub destination: Endpoint,
     pub legs: Vec<Leg>,
     pub service_days: Vec<ServiceDay>,
 }
@@ -93,7 +93,7 @@ impl From<LegRaw> for Leg {
                 .map(|notes| notes.note.into_iter().map(|note| note.into()).collect())
                 .unwrap_or_default(),
             products: value
-                .products
+                .product
                 .into_iter()
                 .map(|product| product.into())
                 .collect(),
@@ -113,12 +113,7 @@ pub enum StopTime {
         time: String,
         date: String,
     },
-    Intermediate {
-        dep_time: Option<String>,
-        dep_date: Option<String>,
-        arr_time: Option<String>,
-        arr_date: Option<String>,
-    },
+    Intermediate {},
 }
 
 #[derive(Debug)]
@@ -128,7 +123,22 @@ pub struct Stop {
     pub ext_id: String,
     pub route_idx: Option<i64>,
     pub coordinate: Coordinate,
-    pub time: StopTime,
+    pub dep_time: Option<String>,
+    pub dep_date: Option<String>,
+    pub arr_time: Option<String>,
+    pub arr_date: Option<String>,
+}
+
+#[derive(Debug)]
+pub struct Endpoint {
+    pub name: String,
+    pub id: String,
+    pub ext_id: String,
+    pub route_idx: Option<i64>,
+    pub coordinate: Coordinate,
+    pub type_field: String,
+    pub time: String,
+    pub date: String,
 }
 
 impl From<StopRaw> for Stop {
@@ -142,17 +152,15 @@ impl From<StopRaw> for Stop {
                 latitude: value.lat,
                 longitude: value.lon,
             },
-            time: StopTime::Intermediate {
-                dep_time: value.dep_time,
-                dep_date: value.dep_date,
-                arr_time: value.arr_time,
-                arr_date: value.arr_date,
-            },
+            dep_time: value.dep_time,
+            dep_date: value.dep_date,
+            arr_time: value.arr_time,
+            arr_date: value.arr_date,
         }
     }
 }
 
-impl From<EndpointRaw> for Stop {
+impl From<EndpointRaw> for Endpoint {
     fn from(value: EndpointRaw) -> Self {
         Self {
             name: value.name,
@@ -163,11 +171,9 @@ impl From<EndpointRaw> for Stop {
                 latitude: value.lat,
                 longitude: value.lon,
             },
-            time: StopTime::Endpoint {
-                type_field: value.type_field,
-                time: value.time,
-                date: value.date,
-            },
+            type_field: value.type_field,
+            time: value.time,
+            date: value.date,
         }
     }
 }

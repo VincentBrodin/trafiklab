@@ -78,7 +78,7 @@ pub struct LegRaw {
     #[serde(rename = "JourneyStatus")]
     pub journey_status: Option<String>,
     #[serde(rename = "Product")]
-    pub products: Vec<ProductRaw>,
+    pub product: Vec<ProductRaw>,
     #[serde(rename = "Stops")]
     pub stops: Option<StopsRaw>,
     #[serde(rename = "JourneyDetail")]
