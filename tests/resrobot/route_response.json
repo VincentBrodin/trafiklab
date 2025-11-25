@@ -1,0 +1,231 @@
+{
+  "Trip": [
+    {
+      "ServiceDays": [
+        {
+          "planningPeriodBegin": "2020-05-29",
+          "planningPeriodEnd": "2020-08-16",
+          "sDaysR": "not every day",
+          "sDaysI": "2. until 18. Jun 2020 Mo - Fr",
+          "sDaysB": "9F3E7800000000000000"
+        }
+      ],
+      "LegList": {
+        "Leg": [
+          {
+            "Origin": {
+              "name": "Stockholm Centralstation",
+              "type": "ST",
+              "id": "740000001",
+              "extId": "740000001",
+              "lon": 18.058151,
+              "lat": 59.330136,
+              "routeIdx": 0,
+              "time": "11:41:00",
+              "date": "2020-06-02"
+            },
+            "Destination": {
+              "name": "Norrköping Centralstation",
+              "type": "ST",
+              "id": "740000007",
+              "extId": "740000007",
+              "lon": 16.183343,
+              "lat": 58.596625,
+              "routeIdx": 6,
+              "time": "13:26:00",
+              "date": "2020-06-02"
+            },
+            "Notes": {
+              "Note": [
+                {
+                  "value": "Endast 2 klass",
+                  "key": "AA",
+                  "type": "A",
+                  "priority": 100,
+                  "routeIdxFrom": 0,
+                  "routeIdxTo": 6
+                },
+                {
+                  "value": "Ej reservering",
+                  "key": "AE",
+                  "type": "A",
+                  "priority": 100,
+                  "routeIdxFrom": 0,
+                  "routeIdxTo": 2
+                },
+                {
+                  "value": "no WiFi",
+                  "key": "SX",
+                  "type": "A",
+                  "priority": 100,
+                  "routeIdxFrom": 0,
+                  "routeIdxTo": 6
+                },
+                {
+                  "value": "no A/C",
+                  "key": "SY",
+                  "type": "A",
+                  "priority": 100,
+                  "routeIdxFrom": 0,
+                  "routeIdxTo": 6
+                }
+              ]
+            },
+            "Product": {
+              "name": "Regional Tåg 231",
+              "num": "231",
+              "catCode": "2",
+              "catOutS": "JRE",
+              "catOutL": "Regional Tåg",
+              "operatorCode": "74",
+              "operator": "SJ",
+              "operatorUrl": "http://www.sj.se"
+            },
+            "Stops": {
+              "Stop": [
+                {
+                  "name": "Stockholm Centralstation",
+                  "id": "740000001",
+                  "extId": "740000001",
+                  "routeIdx": 0,
+                  "lon": 18.058151,
+                  "lat": 59.330136,
+                  "depTime": "11:41:00",
+                  "depDate": "2020-06-02"
+                },
+                {
+                  "name": "Kolmården station (Norrköping kn)",
+                  "id": "740001545",
+                  "extId": "740001545",
+                  "routeIdx": 5,
+                  "lon": 16.362597,
+                  "lat": 58.675424,
+                  "depTime": "13:09:00",
+                  "depDate": "2020-06-02",
+                  "arrTime": "13:09:00",
+                  "arrDate": "2020-06-02"
+                },
+                {
+                  "name": "Norrköping Centralstation",
+                  "id": "740000007",
+                  "extId": "740000007",
+                  "routeIdx": 6,
+                  "lon": 16.183343,
+                  "lat": 58.596625,
+                  "arrTime": "13:26:00",
+                  "arrDate": "2020-06-02"
+                }
+              ]
+            },
+            "idx": "0",
+            "name": "Regional Tåg 231",
+            "transportNumber": "231",
+            "transportCategory": "JRE",
+            "type": "JNY",
+            "reachable": true,
+            "direction": "Norrköping Centralstation"
+          },
+          {
+            "Origin": {
+              "name": "Norrköping Centralstation",
+              "type": "ST",
+              "id": "740000007",
+              "extId": "740000007",
+              "lon": 16.183343,
+              "lat": 58.596625,
+              "routeIdx": 0,
+              "time": "13:48:00",
+              "date": "2020-06-02"
+            },
+            "Destination": {
+              "name": "Mjölby station",
+              "type": "ST",
+              "id": "740000180",
+              "extId": "740000180",
+              "lon": 15.131992,
+              "lat": 58.322984,
+              "routeIdx": 6,
+              "time": "14:35:00",
+              "date": "2020-06-02"
+            },
+            "Notes": {
+              "Note": [
+                {
+                  "value": "Endast 2 klass",
+                  "key": "AA",
+                  "type": "A",
+                  "priority": 100,
+                  "routeIdxFrom": 0,
+                  "routeIdxTo": 6
+                },
+                {
+                  "value": "Ej reservering",
+                  "key": "AE",
+                  "type": "A",
+                  "priority": 100,
+                  "routeIdxFrom": 0,
+                  "routeIdxTo": 6
+                }
+              ]
+            },
+            "Product": {
+              "name": "Länstrafik - Tåg 8739",
+              "num": "8739",
+              "catCode": "4",
+              "catOutS": "JLT",
+              "catOutL": "Länstrafik - Tåg",
+              "operatorCode": "253",
+              "operator": "ÖstgötaTrafiken",
+              "operatorUrl": "http://www.ostgotatrafiken.se/"
+            },
+            "Stops": {
+              "Stop": [
+                {
+                  "name": "Norrköping Centralstation",
+                  "id": "740000007",
+                  "extId": "740000007",
+                  "routeIdx": 0,
+                  "lon": 16.183343,
+                  "lat": 58.596625,
+                  "depTime": "13:48:00",
+                  "depDate": "2020-06-02"
+                },
+                {
+                  "name": "Kimstad station (Norrköping kn)",
+                  "id": "740068883",
+                  "extId": "740068883",
+                  "routeIdx": 1,
+                  "lon": 15.971764,
+                  "lat": 58.546106,
+                  "depTime": "13:59:00",
+                  "depDate": "2020-06-02",
+                  "arrTime": "13:59:00",
+                  "arrDate": "2020-06-02"
+                },
+                {
+                  "name": "Mjölby station",
+                  "id": "740000180",
+                  "extId": "740000180",
+                  "routeIdx": 6,
+                  "lon": 15.131992,
+                  "lat": 58.322984,
+                  "arrTime": "14:35:00",
+                  "arrDate": "2020-06-02"
+                }
+              ]
+            },
+            "idx": "1",
+            "name": "Länstrafik - Tåg 8739",
+            "transportNumber": "8739",
+            "transportCategory": "JLT",
+            "type": "JNY",
+            "reachable": true,
+            "direction": "Motala station"
+          }
+        ],
+        "scrB": "1|OB|MTµ11µ9501µ9341µ9763µ9851µ0µ0µ66133µ9319µ1µ-2147483616µ0µ1µ2|PDHµ60b11222cb3bfeafacd1e38613ce2846|RDµ2062020|RTµ111941",
+        "scrF": "1|OF|MTµ11µ9741µ9741µ10003µ10003µ0µ0µ2613µ9631µ8µ-2147482606µ0µ1µ2|PDHµ60b11222cb3bfeafacd1e38613ce2846|RDµ2062020|RTµ111941"
+      }
+    }
+  ]
+}

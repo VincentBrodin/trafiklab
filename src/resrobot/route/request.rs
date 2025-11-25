@@ -1,7 +1,11 @@
+use std::fs::{File, OpenOptions};
+use std::io::{self, Write};
+use std::rc::Rc;
+
 use chrono::Utc;
 
 use crate::Request;
-use crate::resrobot::{Language, Location};
+use crate::resrobot::{Language, Location, RouteResponse, RouteResponseRaw};
 
 pub struct RouteRequest {
     access_id: String,
@@ -145,11 +149,13 @@ impl RouteRequest {
 }
 
 impl Request for RouteRequest {
-    type Output = String;
+    type Output = RouteResponse;
 
-    fn send(self) -> impl Future<Output = Result<Self::Output, crate::Error>> + Send {
-        println!("SENT");
-        async move { Ok("test".to_string()) }
+    async fn send(self) -> Result<Self::Output, crate::Error> {
+        let url = self.build_url()?;
+        let res = reqwest::get(url).await?;
+        let raw: RouteResponseRaw = res.json().await?;
+        Ok(raw.into())
     }
 
     fn build_url(&self) -> Result<reqwest::Url, crate::Error> {

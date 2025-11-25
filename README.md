@@ -27,8 +27,7 @@ This project aims to provide a clean, async, and well-typed Rust interface to al
 
 
 ### ResRobot
-#### Route planner
-**Get url**
+**Route planner**
 ```rust
 let url = trafiklab::resrobot::RouteRequest::new(
     "API_KEY".into(),
@@ -38,18 +37,6 @@ let url = trafiklab::resrobot::RouteRequest::new(
 .build_url()
 .unwrap();
 ```
-
-- [ ] SL
-  - [ ] SL Transport
-  - [ ] SL Deviations
-  - [ ] SL Journey-planner v2
-
-- [ ] ResRobot v2.1
-  - [ ] ResRobot Timetables
-  - [ ] ResRobot Route planner
-  - [ ] ResRobot Stop lookup
-  - [ ] ResRobot Nearby stops
-  - [ ] ResRobot Deep Links
 
 ## Roadmap
 **Current Endpoint: ResRobot Route planner**

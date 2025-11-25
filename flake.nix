@@ -20,6 +20,7 @@
           pkgs.rustfmt
           pkgs.rust-analyzer
           pkgs.openssl
+          pkgs.nodePackages.vscode-json-languageserver
         ];
 
         shellHook = ''

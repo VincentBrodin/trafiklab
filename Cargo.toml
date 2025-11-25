@@ -9,9 +9,12 @@ resrobot = []
 
 [dependencies]
 chrono = "0.4"
-reqwest = "0.12"
+reqwest = { version ="0.12", features=["json"] }
 serde = "1.0"
 serde_json = "1.0"
 thiserror = "2.0"
-tokio = {version = "1.48", features=["full"]}
+tokio = { version = "1.48", features=["full"] }
 url = "2.5"
+
+[dev-dependencies]
+dotenv = "0.15"

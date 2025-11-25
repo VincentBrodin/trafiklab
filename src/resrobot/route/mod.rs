@@ -1,8 +1,11 @@
 mod request;
 mod response;
+mod response_raw;
 use std::fmt::Display;
 
-pub use request::RouteRequest;
+pub use request::*;
+pub use response::*;
+pub use response_raw::*;
 
 #[derive(Default)]
 pub enum Language {
@@ -22,6 +25,7 @@ impl Display for Language {
     }
 }
 
+#[derive(Debug)]
 pub struct Coordinate {
     pub latitude: f64,
     pub longitude: f64,

@@ -5,8 +5,10 @@ pub mod resrobot;
 pub enum Error {
     #[error("Request error: {0}")]
     RequestError(#[from] reqwest::Error),
-    #[error("Parse error: {0}")]
+    #[error("Url error: {0}")]
     UrlError(#[from] url::ParseError),
+    #[error("Parse error: {0}")]
+    ParseError(#[from] serde_json::Error),
 }
 
 pub trait Request {
