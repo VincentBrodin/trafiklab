@@ -24,6 +24,8 @@
 
         shellHook = ''
           export PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";          
+          alias resrobot="cargo test -F resrobot -- --no-capture "
+          alias stress="cargo test --all-features -- --no-capture"
         '';
       };
     };

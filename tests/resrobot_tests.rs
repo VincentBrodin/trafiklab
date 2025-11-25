@@ -6,19 +6,20 @@ use trafiklab::{
 };
 
 #[test]
-#[cfg(feature = "stress")]
+#[cfg(all(feature = "stress", feature = "resrobot"))]
 fn resrobot_route_build_url_stress_test() {
     let request = RouteRequest::new(
         "API_KEY".to_string(),
-        Location::Id("10".to_string()),
-        Location::Id("11".to_string()),
+        Location::Id("740000001".to_string()),
+        Location::Id("740000003".into()),
+        // Location::Coordinate((59.332709, 18.065601).into()),
     )
     .with_search_for_arrival(true)
     .with_count_after(3)
     .with_count_before(3)
     .with_max_transfers(1);
 
-    const ITERATIONS: u32 = 10_000_000;
+    const ITERATIONS: u32 = 10_000;
     // warm-up to avoid measuring one-time allocations
     let _ = request.build_url();
 
@@ -35,4 +36,41 @@ fn resrobot_route_build_url_stress_test() {
     let url = request.build_url().unwrap();
     println!("{}", url.as_str())
     // assert_eq!(url, url::Url::from_str("https://hello.com").unwrap())
+}
+
+#[test]
+#[cfg(feature = "resrobot")]
+fn resrobot_route_build_url_base_test() {
+    let url = RouteRequest::new(
+        "API_KEY".to_string(),
+        Location::Id("740000001".to_string()),
+        Location::Id("740000003".into()),
+    )
+    .build_url()
+    .unwrap();
+    assert_eq!(
+        url.as_str(),
+        "https://api.resrobot.se/v2.1/trip?format=json&accessId=API_KEY&lang=sv&originId=740000001&destId=740000003&numF=5&numB=0&passlist=false&searchForArrival=false"
+    )
+}
+
+#[test]
+#[cfg(feature = "resrobot")]
+fn resrobot_route_build_url_custom_test() {
+    use trafiklab::resrobot::Language;
+    use url::EncodingOverride;
+
+    let url = RouteRequest::new(
+        "API_KEY".to_string(),
+        Location::Id("740000001".to_string()),
+        Location::Id("740000003".into()),
+    )
+    .with_language(Language::English)
+    .with_pass_list(true)
+    .build_url()
+    .unwrap();
+    assert_eq!(
+        url.as_str(),
+        "https://api.resrobot.se/v2.1/trip?format=json&accessId=API_KEY&lang=sv&originId=740000001&destId=740000003&numF=5&numB=0&passlist=false&searchForArrival=false"
+    )
 }
