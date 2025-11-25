@@ -29,13 +29,13 @@ This project aims to provide a clean, async, and well-typed Rust interface to al
 ### ResRobot
 **Route planner**
 ```rust
-let url = trafiklab::resrobot::RouteRequest::new(
+let res = trafiklab::resrobot::RouteRequest::new(
     "API_KEY".into(),
     Location::Id("740000001".to_string()),
     Location::Id("740000003".into()),
 )
-.build_url()
-.unwrap();
+.send()
+.await?;
 ```
 
 ## Roadmap

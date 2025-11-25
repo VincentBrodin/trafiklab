@@ -1,5 +1,5 @@
 [package]
-version = "0.0.1"
+version = "0.0.2"
 name = "trafiklab"
 description = "Unofficial Rust SDK for Trafiklab APIs"
 authors = ["Vincent Brodin <vincent.brodin21@gmail.com>"]
