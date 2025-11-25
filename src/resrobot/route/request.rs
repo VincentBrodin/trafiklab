@@ -27,15 +27,6 @@ impl RouteRequest {
     /// - `count_after`: `5`
     /// - `count_before`: `0`
     /// - `max_transfer`: `None`
-    ///
-    /// # Examples
-    /// ```
-    /// let req = RouteRequest::new(
-    ///     "KEY".into(),
-    ///     Location::Id("740000001".into()),
-    ///     Location::Id("740000003".into()),
-    /// );
-    /// ```
     pub fn new(access_id: String, origin: Location, destination: Location) -> Self {
         Self {
             access_id,                     // ✓

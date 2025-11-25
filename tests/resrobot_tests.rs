@@ -1,13 +1,13 @@
-use std::time::Instant;
-
-use trafiklab::{
-    Request,
-    resrobot::{Location, RouteRequest},
-};
-
 #[test]
 #[cfg(all(feature = "stress", feature = "resrobot"))]
 fn resrobot_route_build_url_stress_test() {
+    use std::time::Instant;
+
+    use trafiklab::{
+        Request,
+        resrobot::{Location, RouteRequest},
+    };
+
     let request = RouteRequest::new(
         "API_KEY".to_string(),
         Location::Id("740000001".to_string()),
@@ -41,6 +41,11 @@ fn resrobot_route_build_url_stress_test() {
 #[test]
 #[cfg(feature = "resrobot")]
 fn resrobot_route_build_url_base_test() {
+    use trafiklab::{
+        Request,
+        resrobot::{Location, RouteRequest},
+    };
+
     let url = RouteRequest::new(
         "API_KEY".to_string(),
         Location::Id("740000001".to_string()),
@@ -57,8 +62,10 @@ fn resrobot_route_build_url_base_test() {
 #[test]
 #[cfg(feature = "resrobot")]
 fn resrobot_route_build_url_custom_test() {
-    use trafiklab::resrobot::Language;
-    use url::EncodingOverride;
+    use trafiklab::{
+        Request,
+        resrobot::{Language, Location, RouteRequest},
+    };
 
     let url = RouteRequest::new(
         "API_KEY".to_string(),
@@ -71,6 +78,6 @@ fn resrobot_route_build_url_custom_test() {
     .unwrap();
     assert_eq!(
         url.as_str(),
-        "https://api.resrobot.se/v2.1/trip?format=json&accessId=API_KEY&lang=sv&originId=740000001&destId=740000003&numF=5&numB=0&passlist=false&searchForArrival=false"
+        "https://api.resrobot.se/v2.1/trip?format=json&accessId=API_KEY&lang=en&originId=740000001&destId=740000003&numF=5&numB=0&passlist=true&searchForArrival=false"
     )
 }
